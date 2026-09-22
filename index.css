@@ -1,0 +1,101 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Figtree:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap');
+
+:root {
+  --bg-main: #FDFDF9;
+  --bg-sidebar: #F3F2EC;
+  --bg-accent: #FDF8F5;
+  --primary: #D97251;
+  --primary-hover: #C05F41;
+  --text-primary: #2D2A26;
+  --text-secondary: #5C5954;
+  --border-subtle: #EBE8E0;
+  --error: #B04646;
+  --success: #4A7C59;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  font-family: 'Figtree', sans-serif;
+  background: var(--bg-main);
+  color: var(--text-primary);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.font-serif { font-family: 'EB Garamond', serif; }
+.font-mono, code, pre { font-family: 'JetBrains Mono', monospace; }
+
+::selection { background: rgba(217, 114, 81, 0.22); }
+
+/* Scrollbar */
+::-webkit-scrollbar { width: 9px; height: 9px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: #d9d6cc; border-radius: 8px; }
+::-webkit-scrollbar-thumb:hover { background: #c7c3b6; }
+
+.claus-orb {
+  width: 44px; height: 44px; border-radius: 50%;
+  background: radial-gradient(circle at 32% 30%, #E8966F, #D97251 55%, #B5482C);
+  box-shadow: 0 6px 22px rgba(217, 114, 81, 0.4);
+}
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.fade-up { animation: fadeUp 0.45s cubic-bezier(0.22, 1, 0.36, 1) both; }
+
+@keyframes blink { 0%,100%{opacity:1;} 50%{opacity:0;} }
+.caret-blink::after { content: "▋"; margin-left: 1px; animation: blink 1s step-start infinite; color: var(--primary); }
+
+@layer base {
+  :root {
+    --background: 48 33% 98%;
+    --foreground: 30 8% 16%;
+    --card: 0 0% 100%;
+    --card-foreground: 30 8% 16%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 30 8% 16%;
+    --primary: 14 63% 58%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 40 14% 94%;
+    --secondary-foreground: 30 8% 16%;
+    --muted: 40 14% 94%;
+    --muted-foreground: 30 5% 40%;
+    --accent: 18 60% 96%;
+    --accent-foreground: 30 8% 16%;
+    --destructive: 0 60% 48%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 40 18% 90%;
+    --input: 40 18% 90%;
+    --ring: 14 63% 58%;
+    --radius: 0.85rem;
+  }
+}
+
+@layer base {
+  * { @apply border-border; }
+}
+
+/* Markdown content */
+.prose-claus { line-height: 1.7; font-size: 0.975rem; color: var(--text-primary); }
+.prose-claus p { margin: 0.65em 0; }
+.prose-claus h1, .prose-claus h2, .prose-claus h3 { font-family: 'EB Garamond', serif; font-weight: 600; margin: 0.9em 0 0.4em; line-height: 1.25; }
+.prose-claus h1 { font-size: 1.6rem; }
+.prose-claus h2 { font-size: 1.35rem; }
+.prose-claus h3 { font-size: 1.15rem; }
+.prose-claus ul, .prose-claus ol { margin: 0.5em 0; padding-left: 1.4em; }
+.prose-claus li { margin: 0.25em 0; }
+.prose-claus a { color: var(--primary); text-decoration: underline; text-underline-offset: 2px; }
+.prose-claus blockquote { border-left: 3px solid var(--primary); padding-left: 1em; color: var(--text-secondary); margin: 0.8em 0; font-style: italic; }
+.prose-claus table { border-collapse: collapse; width: 100%; margin: 0.8em 0; font-size: 0.9rem; }
+.prose-claus th, .prose-claus td { border: 1px solid var(--border-subtle); padding: 0.5em 0.75em; text-align: left; }
+.prose-claus th { background: var(--bg-sidebar); font-weight: 600; }
+.prose-claus :not(pre) > code { background: #f0ede4; color: #a8432b; padding: 0.12em 0.4em; border-radius: 5px; font-size: 0.86em; }
+.prose-claus pre { margin: 0.8em 0; border-radius: 12px; overflow: hidden; }

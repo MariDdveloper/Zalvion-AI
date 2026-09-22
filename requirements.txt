@@ -1,0 +1,14 @@
+fastapi
+uvicorn
+httpx
+resend
+python-dotenv
+supabase
+pydantic
+google-auth
+email-validator
+gTTS
+exa-py
+pypdf
+edge-tts
+
